@@ -1,0 +1,64 @@
+import java.time.LocalDate;
+public class dict {
+	
+
+	public static String findDay(int month, int day, int year,int n) {
+		
+		    LocalDate localDate = LocalDate.of(year, month, day);
+		    
+
+		    java.time.DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+		    
+		    
+		    System.out.println(dayOfWeek);
+		   
+
+		    count(01,01,2020,-4);
+		    return dayOfWeek.toString();
+		    
+		}
+	static void count(int month, int day, int year,int n) {
+		int sum=0;
+		if(day<10) {
+			sum=sum+day;
+		}
+		else {
+			int d1=day/10;
+			day=day%10;
+			sum=sum+d1+day;
+		}
+		if(month<10) {
+			sum=sum+month;
+		}
+		else {
+			int m1=month/10;
+			month=month%10;
+			sum=sum+m1+month;
+		}
+				while(year>0) {
+			int y1=year%10;
+			sum=sum+y1;
+			year=year/10;
+			
+			
+		}
+		
+			sum=sum+n;
+			System.out.println(sum);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		findDay(01,01,2020,-4);
+		
+		
+		
+			
+	
+	
+	}
+}
+
+
